@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-    <title>V & A Pharmacy | Login</title>
+    <title>Vic & Alex Pharmacy | Login</title>
     <link rel="icon" href="./images/logo.png">
     <meta charset="utf-8">
     <!-- css -->
