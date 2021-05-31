@@ -3,22 +3,24 @@
   <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <title><?php if (!empty($page_title))
+    <title rel="icon" src="./images/logo.png" ><?php if (!empty($page_title))
            echo remove_junk($page_title);
             elseif(!empty($user))
            echo ucfirst($user['name']);
             else echo "Inventory Management System";?>
     </title>
+    <link rel="shortcut icon" Type="image/x-icon" href="l.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
     <link rel="stylesheet" href="libs/css/main.css" />
   </head>
-  <body>
+  
+  <body style ="background-color: #fffff0 ">
   <?php  if ($session->isUserLoggedIn(true)): ?>
-    <header id="header">
-      <div class="logo pull-left"> Inventory System</div>
-      <div class="header-content">
-      <div class="header-date pull-left">
+    <header id="header" style ="background-image: url(images/t3.png);background-repeat: no-repeat; background-size: cover">
+    <div class="logo pull-left" style="background-image: url(images/t3.png);background-repeat: no-repeat;"> <img src="images/logo.png" style="weight: 200px; height: 200px;"></div> 
+    <div class="header-content" >
+      <div class="header-date pull-left" style="  color: #db953a;">
         <strong><?php date_default_timezone_set('Asia/Manila'); echo date("F j, Y, g:i a");?></strong>
       </div>
       <div class="pull-right clearfix">
@@ -53,7 +55,7 @@
       </div>
      </div>
     </header>
-    <div class="sidebar">
+    <div class="sidebar" style="background-image: url(images/t3.png);background-repeat: no-repeat; background-size: cover;">
       <?php if($user['user_level'] === '1'): ?>
         <!-- admin menu -->
       <?php include_once('admin_menu.php');?>
@@ -69,7 +71,8 @@
       <?php endif;?>
 
    </div>
+   <div class="page">
+  <div class="container-fluid">
+
 <?php endif;?>
 
-<div class="page">
-  <div class="container-fluid">

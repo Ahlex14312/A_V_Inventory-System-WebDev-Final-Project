@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All User';
+   $page_title = 'V & A | Manage Disable Users';
   require_once('includes/load.php');
 ?>
 <?php
@@ -17,7 +17,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
-      <div class="panel-heading clearfix">
+      <div class="panel-heading clearfix"  style="background-color: #f5deb3">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <span>Disabled Users</span>

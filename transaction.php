@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All Product';
+  $page_title = 'V & A | Transaction';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(2);
@@ -78,5 +78,5 @@
 
     
     </div>
-
+              </table>
     <?php include_once('layouts/footer.php'); ?>

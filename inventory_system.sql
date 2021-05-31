@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2021 at 10:42 AM
+-- Generation Time: May 31, 2021 at 04:38 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -42,8 +42,10 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (10, 'Diapers'),
 (15, 'Feminine Products'),
 (13, 'Food and Beverages'),
+(17, 'Perfume'),
 (12, 'Personal Hygiene'),
 (14, 'Skin Care Items'),
+(18, 'Toys'),
 (11, 'Vitamins');
 
 -- --------------------------------------------------------
@@ -60,7 +62,7 @@ CREATE TABLE `disabledusers` (
   `password` varchar(255) NOT NULL,
   `user_level` int(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `status` int(255) NOT NULL DEFAULT 0
+  `status` varchar(255) NOT NULL DEFAULT 'Deactive'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -68,7 +70,9 @@ CREATE TABLE `disabledusers` (
 --
 
 INSERT INTO `disabledusers` (`disableId`, `id`, `name`, `username`, `password`, `user_level`, `image`, `status`) VALUES
-(26, 63, 'Victoriano', 'user', '12dea96fec20593566ab75692c9949596833adc9', 2, '4rgkj5pe63.PNG', 1);
+(29, 68, 'Victoriano  ', 'User', '12dea96fec20593566ab75692c9949596833adc9', 2, 'tagu3hq64.PNG', 'Deactive'),
+(33, 76, 'Coco Martin', 'Martin', '54669547a225ff20cba8b75a4adca540eef25858', 1, 'no_image.jpg', '1'),
+(34, 78, 'Patrick', 'Patrick', 'cbb7353e6d953ef360baf960c122346276c6e320', 2, 'no_image.jpg', '1');
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,9 @@ INSERT INTO `media` (`id`, `file_name`, `file_type`) VALUES
 (34, 'revicon.jpg', 'image/jpeg'),
 (35, 'safeguard.jpg', 'image/jpeg'),
 (36, 'palmolive.jpg', 'image/jpeg'),
-(37, 'colgate.jpg', 'image/jpeg');
+(37, 'colgate.jpg', 'image/jpeg'),
+(38, 'bench.jpg', 'image/jpeg'),
+(39, 'doll.jpg', 'image/jpeg');
 
 -- --------------------------------------------------------
 
@@ -122,13 +128,6 @@ CREATE TABLE `pendingorder` (
   `categorie_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `pendingorder`
---
-
-INSERT INTO `pendingorder` (`productId`, `name`, `quantity`, `buy_price`, `sale_price`, `categorie_id`) VALUES
-(44, 'Nips ', 56, 25, 30, 13);
-
 -- --------------------------------------------------------
 
 --
@@ -143,6 +142,13 @@ CREATE TABLE `pendingrequest` (
   `sale_price` int(255) NOT NULL,
   `categorie_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pendingrequest`
+--
+
+INSERT INTO `pendingrequest` (`productId`, `name`, `quantity`, `buy_price`, `sale_price`, `categorie_id`) VALUES
+(48, 'Lipstick ', 75, 122, 150, 16);
 
 -- --------------------------------------------------------
 
@@ -167,24 +173,24 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `quantity`, `buy_price`, `sale_price`, `categorie_id`, `media_id`, `date`) VALUES
 (44, 'Nips', '56', '25.00', '30.00', 13, 29, '2021-05-23 19:25:43'),
-(45, 'Colgate', '125', '89.00', '117.00', 12, 37, '2021-05-23 19:27:47'),
-(46, 'Porcelana Astringent ', '86', '55.00', '69.00', 16, 18, '2021-05-23 19:29:38'),
+(45, 'Brand New Colgate ', '125', '89.00', '117.00', 12, 37, '2021-05-23 19:27:47'),
 (47, 'Myra Lotion', '45', '78.00', '90.00', 16, 20, '2021-05-23 19:30:31'),
 (48, 'Lipstick', '75', '122.00', '150.00', 16, 21, '2021-05-23 19:32:47'),
 (49, 'Trust Pills', '241', '24.00', '30.00', 9, 22, '2021-05-23 19:33:52'),
-(50, 'Premiere Condom', '158', '112.00', '126.00', 9, 23, '2021-05-23 19:34:58'),
+(50, 'Condom ', '158', '112.00', '126.00', 9, 23, '2021-05-23 19:34:58'),
 (51, 'Pampers Pants - New Born', '115', '78.00', '99.00', 10, 24, '2021-05-23 19:36:24'),
 (52, 'Caress Pampers Pants - Large', '36', '99.00', '125.00', 10, 25, '2021-05-23 19:38:43'),
 (53, 'Merries Diaper', '45', '78.00', '95.00', 10, 26, '2021-05-23 19:39:54'),
 (54, 'Sisters Napkin', '67', '25.00', '31.00', 15, 27, '2021-05-23 19:40:53'),
 (55, 'Vagisil', '68', '135.00', '156.00', 15, 28, '2021-05-23 19:41:43'),
 (56, 'C2 - Lemon', '189', '9.00', '14.00', 13, 30, '2021-05-23 19:42:40'),
-(57, 'Coca - Cola - Canned', '58', '18.00', '25.00', 13, 31, '2021-05-23 19:43:34'),
 (58, 'Usana', '126', '99.00', '1112.00', 11, 32, '2021-05-23 19:44:41'),
 (59, 'Enervon - Battled ', '212', '189.00', '195.00', 11, 33, '2021-05-23 19:45:21'),
 (60, 'Revicon', '167', '141.00', '150.00', 11, 34, '2021-05-23 19:46:00'),
 (61, 'Safeguard ', '145', '45.00', '60.00', 12, 35, '2021-05-23 19:47:00'),
-(62, 'Palmolive', '34', '88.00', '99.00', 12, 36, '2021-05-23 19:47:35');
+(62, 'Palmolive', '34', '88.00', '99.00', 12, 36, '2021-05-23 19:47:35'),
+(65, 'Bench Perfume', '100', '100.00', '120.00', 17, 38, '2021-05-31 01:21:28'),
+(66, 'Doll', '100', '200.00', '250.00', 18, 39, '2021-05-31 01:45:26');
 
 -- --------------------------------------------------------
 
@@ -221,7 +227,11 @@ CREATE TABLE `transaction` (
 INSERT INTO `transaction` (`id`, `productId`, `name`, `quantity`, `sale_price`) VALUES
 (14, 45, 'Colgate ', 125, 117),
 (15, 61, 'Safeguard  ', 145, 60),
-(16, 49, 'Trust Pills ', 241, 30);
+(16, 49, 'Trust Pills ', 241, 30),
+(17, 44, 'Nips ', 56, 30),
+(18, 48, 'Lipstick ', 10, 150),
+(19, 49, 'Trust Pills ', 241, 30),
+(20, 54, 'Sisters Napkin ', 67, 31);
 
 -- --------------------------------------------------------
 
@@ -246,8 +256,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `disableId`, `name`, `username`, `password`, `user_level`, `image`, `status`, `last_login`) VALUES
-(61, 0, 'Alex', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 'eftt69d61.PNG', 1, '2021-05-29 09:48:42'),
-(64, 0, 'Victoriano', 'User', '12dea96fec20593566ab75692c9949596833adc9', 2, 'tagu3hq64.PNG', 1, '2021-05-29 09:48:00');
+(61, 0, 'Alex', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 'eftt69d61.PNG', 1, '2021-05-31 03:55:41'),
+(72, 0, 'Vick', 'Vick', '85c1b96109585c9bde6c2a2127645f6ec3eed03d', 2, 'no_image.jpg', 1, '2021-05-31 02:20:06'),
+(73, 0, 'Victoriano', 'victoriano', 'd117363c5422f6d2362841c649364107cf7742c1', 2, 'stifjslk73.PNG', 1, '2021-05-31 03:54:33'),
+(75, 74, 'Ean Velayo ', 'Ean', '8ecc221a67e22b2923f39f0b0cbf8461c85a43b3', 1, 'no_image.jpg', 1, '2021-05-31 03:06:51'),
+(77, 0, 'Jurick', 'Jurick', '85e32494390334d9303b0b81a3b660b9a5b927c0', 2, 'no_image.jpg', 1, '2021-05-31 03:40:27');
 
 -- --------------------------------------------------------
 
@@ -268,8 +281,7 @@ CREATE TABLE `user_groups` (
 
 INSERT INTO `user_groups` (`id`, `group_name`, `group_level`, `group_status`) VALUES
 (1, 'Admin', 1, 1),
-(2, 'Special', 2, 1),
-(5, 'User', 3, 1);
+(2, 'User', 2, 1);
 
 --
 -- Indexes for dumped tables
@@ -339,25 +351,25 @@ ALTER TABLE `user_groups`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `disabledusers`
 --
 ALTER TABLE `disabledusers`
-  MODIFY `disableId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `disableId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -369,13 +381,13 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `user_groups`

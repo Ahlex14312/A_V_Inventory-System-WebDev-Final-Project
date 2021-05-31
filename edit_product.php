@@ -58,7 +58,7 @@ if(!$product){
 </div>
   <div class="row">
       <div class="panel panel-default">
-        <div class="panel-heading">
+        <div class="panel-heading"  style="background-color: #f5deb3">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
             <span>Add New Product</span>
@@ -116,7 +116,7 @@ if(!$product){
                     <label for="qty">Buying price</label>
                     <div class="input-group">
                       <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-usd"></i>
+                        <i class="glyphicon glyphicon-ruble"></i>
                       </span>
                       <input type="number" class="form-control" name="buying-price" value="<?php echo remove_junk($product['buy_price']);?>">
                       <span class="input-group-addon">.00</span>
@@ -128,7 +128,7 @@ if(!$product){
                      <label for="qty">Selling price</label>
                      <div class="input-group">
                        <span class="input-group-addon">
-                         <i class="glyphicon glyphicon-usd"></i>
+                         <i class="glyphicon glyphicon-ruble"></i>
                        </span>
                        <input type="number" class="form-control" name="saleing-price" value="<?php echo remove_junk($product['sale_price']);?>">
                        <span class="input-group-addon">.00</span>

@@ -1,4 +1,4 @@
-<ul>
+<ul >
   <li>
     <a href="home.php">
       <i class="glyphicon glyphicon-home"></i>
@@ -10,7 +10,7 @@
       <i class="glyphicon glyphicon-th-large"></i>
       <span>Products</span>
     </a>
-    <ul class="nav submenu">
+    <ul class="nav submenu" style ="background-image: url(images/t3.png);background-repeat: no-repeat; background-size: cover ">
        <li><a href="product.php">Manage product</a> </li>
        <li><a href="add_product.php">Add product</a> </li>
    </ul>

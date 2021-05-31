@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All Product';
+  $page_title = 'V & A | Pending Requests';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(2);
@@ -7,11 +7,8 @@
 ?>  
 <?php include_once('layouts/header.php'); ?>
 
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped" >
      
-      
-     
-                
                 <tr >
                     <!-- <th scope="col">productId</th> -->
                     <th scope="col">productId</th>
@@ -20,10 +17,7 @@
                     <th scope="col">Buy_price</th>
                     <th scope="col">sale_price</th>
                     <th scope="col">Categorie_id</th>
-
-                    <th scope="col">Action</th>
-                
-                    
+                    <th scope="col">Action</th> 
                 </tr>
             </thead>
 
@@ -50,16 +44,10 @@
 					</td>
                     <td>
 						<?php echo  $row['name']; ?>
-					</td>
-                    
-         
-
-                  
+					</td>      
 					<td>
 						<?php echo  $row['quantity']; ?>
-					</td>
-
-                   
+					</td>        
 					<td>
 						<?php echo $row['buy_price']; ?>
 					</td>
@@ -76,22 +64,12 @@
                   }
               </style>
            <a href="approvedrequest.php?approvedrequest=<?php echo $row['productId'];?>&name=<?php echo $row['name'];?>&quantity=<?php echo $row['quantity'];?>&buy_price=<?php echo $row['buy_price'];?>&sale_price=<?php echo $row['sale_price'];?>&categorie_id=<?php echo $row['categorie_id'];?>"
-                    class="glyphicon glyphicon-check-warning"></a> 
+                    class="glyphicon glyphicon-check-warning">Approve Request</a> 
 					</td>	
 				</tr>
-				
-        
-
-
-
-
-
-
 <?php } ?>
 <?php }?>
 <?php }?>
-
-    
     </div>
-
+                </table>
     <?php include_once('layouts/footer.php'); ?>

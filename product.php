@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All Product';
+   $page_title = 'V & A | Manage Products';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(2);
@@ -12,7 +12,7 @@
      </div>
     <div class="col-md-12">
       <div class="panel panel-default">
-        <div class="panel-heading clearfix">
+        <div class="panel-heading clearfix"  style="background-color: #f5deb3">
          <div class="pull-right">
            <a href="add_product.php" class="btn btn-warning">Add New</a>
          </div>
@@ -62,9 +62,10 @@
               </tr>
              <?php endforeach; ?>
             </tbody>
-          </tabel>
+          </table>
         </div>
       </div>
     </div>
   </div>
-  <?php include_once('layouts/footer.php'); ?>
+    <?php include_once('layouts/footer.php'); ?>
+ 

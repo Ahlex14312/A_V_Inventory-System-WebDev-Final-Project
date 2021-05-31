@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All User';
+   $page_title = 'V & A | Manage Users';
   require_once('includes/load.php');
 ?>
 <?php
@@ -17,7 +17,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
-      <div class="panel-heading clearfix">
+      <div class="panel-heading clearfix"  style="background-color: #f5deb3">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <span>Users</span>
@@ -49,7 +49,7 @@
            <?php if($a_user['status'] === '1'): ?>
             <span class="label label-warning"><?php echo "Active"; ?></span>
           <?php else: ?>
-            <span class="label label-danger"><?php echo "Deactive"; ?></span>
+            <span class="label label-danger"><?php echo "Active"; ?></span>
           <?php endif;?>
            </td>
            <td><?php echo read_date($a_user['last_login'])?></td>

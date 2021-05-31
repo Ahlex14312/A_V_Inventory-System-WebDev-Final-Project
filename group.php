@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All Group';
+  $page_title = 'V & A | Manage Group';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(1);
@@ -13,8 +13,8 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-default">
-    <div class="panel-heading clearfix">
+    <div class="panel panel-default"  >
+    <div class="panel-heading clearfix"  style="background-color: #f5deb3">
       <strong>
         <span class="glyphicon glyphicon-th"></span>
         <span>Groups</span>

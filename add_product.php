@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'Add Product';
+   $page_title = 'V & A | Add Product';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(2);
@@ -46,15 +46,15 @@
 
 ?>
 <?php include_once('layouts/header.php'); ?>
-<div class="row">
+<div class="row" >
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
 </div>
   <div class="row">
   <div class="col-md-8">
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div class="panel panel-default" >
+        <div class="panel-heading"  style="background-color: #f5deb3">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
             <span>Add New Product</span>
@@ -107,7 +107,7 @@
                  <div class="col-md-4">
                    <div class="input-group">
                      <span class="input-group-addon">
-                       <i class="glyphicon glyphicon-usd"></i>
+                       <i class="glyphicon glyphicon-ruble"></i>
                      </span>
                      <input type="number" class="form-control" name="buying-price" placeholder="Buying Price">
                      <span class="input-group-addon">.00</span>
@@ -116,7 +116,7 @@
                   <div class="col-md-4">
                     <div class="input-group">
                       <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-usd"></i>
+                        <i class="glyphicon glyphicon-ruble"></i>
                       </span>
                       <input type="number" class="form-control" name="saleing-price" placeholder="Selling Price">
                       <span class="input-group-addon">.00</span>

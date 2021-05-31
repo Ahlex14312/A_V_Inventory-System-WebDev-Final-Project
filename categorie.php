@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All categories';
+   $page_title = 'V & A | Manage Categories';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(1);
@@ -36,8 +36,8 @@
   </div>
    <div class="row">
     <div class="col-md-5">
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div class="panel panel-default" >
+        <div class="panel-heading"  style="background-color: #f5deb3">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
             <span>Add New Category</span>
@@ -55,7 +55,7 @@
     </div>
     <div class="col-md-7">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"  style="background-color: #f5deb3">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <span>All Categories</span>

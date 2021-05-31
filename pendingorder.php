@@ -16,27 +16,7 @@ $all_photo = find_all('media');
     validate_fields($req_fields);
 
    if(empty($errors)){
-    $p_id = remove_junk($db->escape($_POST['id']));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+       $p_id = remove_junk($db->escape($_POST['id']));
        $p_name  = remove_junk($db->escape($_POST['product-title']));
        $p_cat   = (int)$_POST['product-categorie'];
        $p_qty   = remove_junk($db->escape($_POST['product-quantity']));
@@ -137,26 +117,7 @@ $all_photo = find_all('media');
                     <td>
 						<?php echo $row['categorie_id']; ?>
 					</td>
-     
-                    
-                    
-    
-           
-        
-
-	
-
-      	
-
-
 				</tr>
-				
-        
-
-
-
-
-
 
 <?php } ?>
 <?php }?>
@@ -170,11 +131,5 @@ $all_photo = find_all('media');
     </div>
   </div>
 </div>
-
-
-
-
-
-
 
 <?php include_once('layouts/footer.php'); ?>

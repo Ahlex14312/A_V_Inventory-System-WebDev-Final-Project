@@ -3,12 +3,12 @@
   require_once('includes/load.php');
   if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 ?>
-<?php include_once('layouts/header.php'); ?>
+    <?php include_once('layouts/header.php'); ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Vic & Alex Pharmacy | Login</title>
+    <title>V & A Pharmacy | Login</title>
     <link rel="icon" href="./images/logo.png">
     <meta charset="utf-8">
     <!-- css -->
@@ -19,12 +19,12 @@
 </head>
 <!-- background -->
 
-<body style="background-image: url(images/background2.png);background-repeat: no-repeat; background-size: cover;">
-    <section class="ftco-section">
+<body>
+    <section class="ftco-section" >
         <div class="container ">
             <div class="row justify-content-center">
             </div>
-            <div class="row justify-content-center ">
+            <div class="row justify-content-center  " style="margin-left: 20%">
                 <div class="col-md-12 col-lg-10 shadow-lg bg-rimary rounded">
                     <div class="wrap d-md-flex " >
                         <div class="img" style="background-image: url(images/background.jpeg);">

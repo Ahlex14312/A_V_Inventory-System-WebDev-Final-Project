@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'Add Sale';
+   $page_title = 'V & A | Add Sale';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(3);
@@ -58,10 +58,10 @@
 
   <div class="col-md-12">
     <div class="panel panel-default">
-      <div class="panel-heading clearfix">
+      <div class="panel-heading clearfix" style="background-color: #f5deb3">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Sale Eidt</span>
+          <span>Sale Edit</span>
        </strong>
       </div>
       <div class="panel-body">
